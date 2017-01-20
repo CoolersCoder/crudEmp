@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Mamangement System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/common.css" th:href="@{css/common.css}" />
+    <link type="text/css" rel="stylesheet" href="css/animate.css" th:href="@{css/animate.css}" />
+</head>
+<body>
+    <div class="container animated bounce">
+      <form class="form-signin" action="/verify" method="post">
+        <h2 class="form-signin-heading">Please login in</h2>
+        <label for="inputUsername" class="sr-only">Email address</label>
+        <input type="text" id="inputUsername" class="form-control" name="username" placeholder="Username" />
+      
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" />
+        <label>
+            
+         </label>
+        <p class="bg-danger" th:text="${Error}"> </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login in</button>
+      </form>
+    </div> <!-- /container -->
+    
+
+</body>
+</html>

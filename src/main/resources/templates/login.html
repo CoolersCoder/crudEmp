@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Mamangement System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" href="css/common.css" th:href="@{css/common.css}" />
+</head>
+<body>
+	<div class="container">
+	<div class="jumbotron">
+        <h1>Employee Management System</h1>
+        <p class="lead">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+    </div>
+    <table class="table table-striped">
+		<tr>
+		    <th>Name</th>
+		    <th>Email</th>
+		    <th>Department</th>
+		    <th>Actions</th>
+		</tr>  
+    	<tr th:each = "employee : ${employees}">
+    		<td th:text="${employee.firstName} + ' ' + ${employee.lastName}"></td>
+    		<td th:text="${employee.email}"></td>
+    		<td th:text="${employee.department}"></td>
+    		<td><a th:href="@{/delete/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a></td>
+    	</tr>
+    </table>
+    <a href="/add" class="btn btn-success">Add Employee</a>
+    </div>
+</body>
+</html>
