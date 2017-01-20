@@ -61,11 +61,5 @@ public class EmployeeController {
     	repository.delete(employeeId);
         return "redirect:/employee_data";
     }    
-    
-    @RequestMapping(value = "/modify/{id}", method = RequestMethod.GET)
-    public String modifyEmployee(@PathVariable("id") Long employeeId, Model model) {
-    	Employee employeeOne = repository.findOne(employeeId);
-    	model.addAttribute("employeeOne", employeeOne);	
-        return "addEmployee";
-    } 
+ 
 }
