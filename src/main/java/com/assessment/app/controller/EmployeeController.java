@@ -28,7 +28,7 @@ public class EmployeeController {
 		if(validationRepository.findByUsernameAndPassword(username, password)!=null){
 			return "redirect:/employee_data";
 		}
-		model.addAttribute("Error","Please check your username and password");
+		model.addAttribute("Error","sPlease check your username and password");
     	return "/index";
     }
 	
